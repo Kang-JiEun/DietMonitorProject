@@ -75,10 +75,10 @@ public class UserController {
 	                PrintWriter out = response.getWriter();
 	                response.setCharacterEncoding("utf-8");
 	                response.setContentType("text/html; charset=utf-8");
-	                out.println("<script> alert('회원가입 완료되었습니다.'); </script>");
+	                out.println("<script> alert('회원가입 완료되었습니다.'); location.href='/login';</script>");
 	                out.close();
-	                
-	                return "redirect:/login";
+	                return null;
+
 	                
 	            } else { //DB 저장 실패 경우
 	            	log.error("회원가입 실패: 사용자 저장 중 문제가 발생했습니다.");
